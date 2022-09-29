@@ -16,6 +16,7 @@ pipeline {
         steps {
 
             sh "cd 'Task 2/'"
+            sh "ls -al"
             sh "docker-compose up -d"
             sh "docker-compose ps"
         }
