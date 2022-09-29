@@ -14,11 +14,11 @@ pipeline {
 	  }
         stage('Deploy'){
         steps {
-            sh 'cd "/Task 2/"'
+            sh 'cd pwd/Task 2/'
             sh "pwd"
             sh "ls -al"
-            sh "docker-compose up -d"
-            sh "docker-compose ps"
+            sh "docker-compose -f /Task 2/  up -d"
+            sh "docker-compose -f /Task 2/ ps"
         }
 	  }
     }
