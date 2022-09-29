@@ -5,8 +5,6 @@ pipeline {
             steps {
                 sh "docker --version"
                 sh "docker-compose --version"
-                sh "${WORKSPACE}"
-
             }
         }
 	    stage('Test'){
