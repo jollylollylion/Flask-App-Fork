@@ -1,0 +1,42 @@
+version: '3.7'
+services:
+  nginx:
+    container_name: nginx
+    build:  ~/dockerfileexercise/Task 2/nginx
+    networks:
+      - html-network
+    ports:
+    - target: 80
+      published: 80
+    volumes:
+    - type: bind
+      source: ~/dockerfileexercise/Task 2/nginx/nginx.conf
+      target: /etc/nginx/nginx.conf
+  frontend:
+    container_name: flask-app
+    build: ~/dockerfileexercise/Task 2/flask-app
+    networks:
+      - html-network
+    image: app-layer:latest
+    ports:
+    - target: 5000
+      published: 5000
+  backend:
+    container_name: flask-db
+    build: ~/dockerfileexercise/Task 2/db
+    networks:
+      - html-network
+    image: db-layer:latest
+    volumes:
+      - db_file:/var/lib/mysql
+    ports:
+    - target: 3306
+      published: 3306
+    
+volumes:
+  db_file:
+networks:
+  html-network:
+    name: html-network
+
+
