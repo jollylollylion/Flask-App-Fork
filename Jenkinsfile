@@ -6,6 +6,10 @@ pipeline {
                 sh "ls"
                 sh "docker --version"
                 sh "docker-compose --version"
+                sh "workspace location: ${WORKSPACE}"
+                sh "ls -al ${WORKSPACE}"
+
+
             }
         }
 	    stage('Test'){
@@ -16,7 +20,7 @@ pipeline {
         stage('Deploy'){
         steps {
 
-            sh "cd ~/home/ubuntu/Flask-App-Fork/Task 2/"
+            sh "cd /var/lib/jenkins/workspace/Basic Pipeline"
             sh "docker-compose up -d"
             sh "docker-compose ps"
         }
