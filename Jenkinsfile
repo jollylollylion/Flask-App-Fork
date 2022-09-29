@@ -5,7 +5,7 @@ pipeline {
             steps {
                 sh "docker --version"
                 sh "docker-compose --version"
-                sh "workspace location: ${WORKSPACE}"
+                sh "${WORKSPACE}"
 
             }
         }
