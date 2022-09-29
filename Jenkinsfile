@@ -14,7 +14,7 @@ pipeline {
 	  }
         stage('Deploy'){
         steps {
-            sh 'cd pwd/Task\ 2/'
+            // sh 'cd pwd/Task 2/'
             sh "pwd"
             sh "ls -al"
             sh "docker-compose -f /Task 2/  up -d"
