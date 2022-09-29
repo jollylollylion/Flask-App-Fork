@@ -16,7 +16,7 @@ pipeline {
         stage('Deploy'){
         steps {
 
-            sh "cd ~/home/ubuntu/Flask-App-Fork/Task\ 2"
+            sh "cd ~/home/ubuntu/Flask-App-Fork/Task 2/"
             sh "docker-compose up -d"
             sh "docker-compose ps"
         }
