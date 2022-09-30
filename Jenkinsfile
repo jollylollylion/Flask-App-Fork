@@ -15,6 +15,7 @@ pipeline {
         stage('Deploy'){
         steps {
             dir('Task 2') {
+                sh "pwd"
                 sh "docker-compose up -d"
                 sh "docker-compose ps"
             }
