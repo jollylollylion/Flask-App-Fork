@@ -22,9 +22,9 @@ pipeline {
             sh "pwd"
         }
 	  }
-        post {
-            always {
-                cleanWs()
-            }
     }
+    post {
+        always {
+            cleanWs()
+        }
 }
